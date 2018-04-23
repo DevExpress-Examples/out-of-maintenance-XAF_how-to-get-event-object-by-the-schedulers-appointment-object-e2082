@@ -1,0 +1,25 @@
+Imports Microsoft.VisualBasic
+Imports System
+
+Imports DevExpress.ExpressApp.Updating
+Imports DevExpress.Xpo
+Imports DevExpress.Data.Filtering
+Imports DevExpress.Persistent.BaseImpl
+Imports DevExpress.ExpressApp
+
+Namespace WinSolution.Module
+	Public Class Updater
+		Inherits ModuleUpdater
+		Public Sub New(ByVal objectSpace As ObjectSpace, ByVal currentDBVersion As Version)
+			MyBase.New(objectSpace, currentDBVersion)
+		End Sub
+		Public Overrides Sub UpdateDatabaseAfterUpdateSchema()
+			MyBase.UpdateDatabaseAfterUpdateSchema()
+			Dim obj As DevExpress.Persistent.BaseImpl.Event = ObjectSpace.CreateObject(Of DevExpress.Persistent.BaseImpl.Event)()
+			obj.Subject = "Test Event"
+			obj.StartOn = DateTime.Now
+			obj.AllDay = True
+			obj.Save()
+		End Sub
+	End Class
+End Namespace
