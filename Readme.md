@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [SchedulerListViewViewController.cs](./CS/WinSolution.Module.Win/SchedulerListViewViewController.cs) (VB: [SchedulerListViewViewController.vb](./VB/WinSolution.Module.Win/SchedulerListViewViewController.vb))
+<!-- default file list end -->
 # How to get Event object by the scheduler's Appointment object
 
 
